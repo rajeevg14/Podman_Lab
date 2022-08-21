@@ -1,5 +1,2 @@
-FROM registry.access.redhat.com/ubi8/python-39
-LABEL author="Rajeev Kumar Gupta"
-LABEL description="An example Containerfile"
-COPY hello-world.py
-CMD python hello-world.py
+FROM ubuntu:latest
+CMD echo Hello World!
