@@ -1,0 +1,8 @@
+FROM registry.access.redhat.com/ubi8/python-39
+
+LABEL author="Rajeev Kumar Gupta"
+LABEL description="Containerfile for Python script which prints Hello, Name"
+
+COPY hello-world.py /app/
+ENV NAME=Rajeev
+CMD python3 /app/hello-world.py

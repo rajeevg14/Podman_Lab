@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+LABEL author="Rajeev Kumar Gupta"
+LABEL description="An example Containerfile"
+RUN apt-get install python
+COPY hello-world.py
+CMD python hello-world.py
