@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-WORKDIR /usr
-WORKDIR src
-WORKDIR app
+WORKDIR var
+WORKDIR log/nginx
+CMD pwd
 CMD pwd
