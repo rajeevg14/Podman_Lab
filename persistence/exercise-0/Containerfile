@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL author="Rajeev Kumar Gupta"
 LABEL description="An example Containerfile"
-RUN apt-get install python
+RUN apt-get install python3
 COPY hello-world.py
-CMD python hello-world.py
+CMD python3 hello-world.py
