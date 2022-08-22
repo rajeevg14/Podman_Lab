@@ -1,5 +1,5 @@
 FROM registry.access.redhat.com/ubi8/python-39
 LABEL author="Rajeev Kumar Gupta"
 LABEL description="An example Containerfile"
-COPY *.py /apps/
+COPY *.py .
 CMD python hello-world.py
