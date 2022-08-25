@@ -1,2 +1,4 @@
-FROM nginx
+FROM docker.io/nginx
+WORKDIR var
+WORKDIR nginx
 EXPOSE 80
