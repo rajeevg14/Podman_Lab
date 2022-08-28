@@ -5,6 +5,7 @@ COPY environment.yml .
 RUN conda env create -f environment.yml
 # Make RUN commands use the new environment:
 SHELL ["conda", "run", "-n", "myenv", "/bin/bash", "-c"]
+RUN conda update -n base -c defaults conda
 RUN conda clean --all
 RUN conda install -c conda-forge pyomo
 RUN conda install -c conda-forge ipopt glpk

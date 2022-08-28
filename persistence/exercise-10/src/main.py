@@ -1,13 +1,9 @@
-from numba import jit
-import numpy as np
+import pyomo.environ as pyo
 
-x = np.arange(100).reshape(10, 10)
+model = pyo.ConcreteModel()
 
-@jit(nopython=True) # Set "nopython" mode for best performance, equivalent to @njit
-def go_fast(a): # Function is compiled to machine code when called the first time
-    trace = 0.0
-    for i in range(a.shape[0]):   # Numba likes loops
-        trace += np.tanh(a[i, i]) # Numba likes NumPy functions
-    return a + trace              # Numba likes NumPy broadcasting
+model.x = pyo.Var([1,2], domain=pyo.NonNegativeReals)
 
-print(go_fast(x))
+model.OBJ = pyo.Objective(expr = 2*model.x[1] + 3*model.x[2])
+
+model.Constraint1 = pyo.Constraint(expr = 3*model.x[1] + 4*model.x[2] >= 1)
