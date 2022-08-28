@@ -1,0 +1,7 @@
+FROM registry.access.redhat.com/ubi8/ubi
+COPY counter.py /home/counter.py
+RUN useradd -ms /bin/bash counter
+RUN yum -y install python3 && chmod 755 /home/counter.py
+USER counter
+ENV PYTHONUNBUFFERED=1
+ENTRYPOINT /home/counter.py
