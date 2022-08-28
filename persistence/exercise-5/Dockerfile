@@ -1,4 +1,4 @@
-FROM conda/miniconda3
+FROM docker.io/conda/miniconda3
 
 WORKDIR /src
 RUN conda --version
