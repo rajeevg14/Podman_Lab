@@ -1,12 +1,9 @@
 import pyomo.environ as pyo
-from itertools import compress
 
-pyomo_solvers_list = pyo.SolverFactory.__dict__['_cls'].keys()
-solvers_filter = []
-for s in pyomo_solvers_list:
-    try:
-        solvers_filter.append(pyo.SolverFactory(s).available())
-    except (ApplicationError, NameError, ImportError) as e:
-        solvers_filter.append(False)
-pyomo_solvers_list = list(compress(pyomo_solvers_list,solvers_filter))
-print(pyomo_solvers_list)
+model = pyo.ConcreteModel()
+
+model.x = pyo.Var([1,2], domain=pyo.NonNegativeReals)
+
+model.OBJ = pyo.Objective(expr = 2*model.x[1] + 3*model.x[2])
+
+model.Constraint1 = pyo.Constraint(expr = 3*model.x[1] + 4*model.x[2] >= 1)
