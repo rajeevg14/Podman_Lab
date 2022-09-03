@@ -1,0 +1,16 @@
+FROM registry.access.redhat.com/ubi8/ubi:latest
+
+RUN yum install -y rust-toolset
+
+RUN yum install cargo
+
+RUN yum install -y python39
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN chmod -R 765 /usr/src/app
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+CMD /usr/src/app/script.sh
