@@ -1,0 +1,6 @@
+name: myenv
+channels:
+  - conda-forge
+  - https://opence.mit.edu
+dependencies:
+  - python=3.7
