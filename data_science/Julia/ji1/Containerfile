@@ -1,4 +1,4 @@
-FROM julia:latest
+FROM docker.io/julia
 
 COPY . .
 
