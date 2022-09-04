@@ -1,0 +1,10 @@
+FROM r-base
+
+ARG WHEN
+
+RUN mkdir /home/analysis
+
+
+COPY main.R /home/analysis/main.R
+
+CMD R -e "source('/home/analysis/main.R')"
