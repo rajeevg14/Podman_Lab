@@ -1,0 +1,7 @@
+FROM docker.io/julia
+
+COPY . .
+
+ENTRYPOINT [ "julia" ]
+
+CMD [ "main.ji" ]

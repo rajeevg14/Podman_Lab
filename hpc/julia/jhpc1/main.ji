@@ -1,0 +1,12 @@
+import Pkg
+Pkg.add("CUDA")
+Pkg.test("CUDA")
+Using CUDA
+
+print(CUDA.versioninfo())
+[print(CUDA.capability(dev)) for dev in CUDA.devices()]
+
+x = CuArray([5, 10, 15, 20])
+y = CuArray([5, 10, 15, 20])
+
+print(x .+ y)
