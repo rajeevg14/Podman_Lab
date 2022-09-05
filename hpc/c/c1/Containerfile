@@ -1,0 +1,15 @@
+FROM docker.io/gcc:latest
+
+WORKDIR c1
+
+COPY . .
+
+RUN gcc -o ro run.c
+
+RUN readelf -l ro|grep "program interpreter"
+
+RUN ls -l
+
+RUN pwd
+
+CMD [“./ro”]

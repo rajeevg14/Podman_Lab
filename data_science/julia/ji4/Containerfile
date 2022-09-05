@@ -1,0 +1,7 @@
+FROM julia:latest
+
+COPY . .
+
+ENTRYPOINT [ "julia" ]
+
+CMD [ "main.ji" ]
