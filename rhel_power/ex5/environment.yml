@@ -1,0 +1,11 @@
+name: myenv
+channels:
+  - conda-forge
+  - https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/
+  - https://opence.mit.edu
+dependencies:
+  - python=3.9
+  - flask
+  - pyomo
+  - ipopt
+  - glpk

@@ -1,0 +1,23 @@
+FROM registry.access.redhat.com/ubi8/ubi:latest
+
+WORKDIR /app
+
+COPY . .
+
+RUN chmod -R 765 /app
+
+RUN bash /app/Anaconda3-2022.05-Linux-ppc64le.sh -b -u
+
+ENV IBM_POWERAI_LICENSE_ACCEPT yes
+ENV CONDA_ALWAYS_YES true
+
+# Create the environment:
+COPY environment.yml .
+RUN /root/anaconda3/bin/conda env create -f environment.yml
+
+# Make RUN commands use the new environment:
+SHELL ["/root/anaconda3/bin/conda", "run", "-n", "opence_env", "/bin/bash", "-c"]
+
+# The code to run when container is started:
+COPY main.py .
+ENTRYPOINT ["/root/anaconda3/bin/conda", "run", "--no-capture-output", "-n", "opence_env", "python", "main.py"]
