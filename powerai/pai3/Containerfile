@@ -1,0 +1,5 @@
+FROM docker.io/ibmcom/powerai
+
+COPY . .
+
+CMD python3 src/main.py
