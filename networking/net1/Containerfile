@@ -1,0 +1,16 @@
+# Start with a base image
+FROM redhat/ubi8
+# Maintainer information
+LABEL org.opencontainers.image.authors="mail@clusterapps.com"
+LABEL description="Simple Network scan"
+# Run commands to build the container
+# Do as much with the fewest RUN lines
+RUN dnf -y update && \
+dnf -y install \
+nmap iproute procps-ng && \
+bash && \
+dnf clean all
+# Entrypoint is the command that run when the ccontainer starts
+ENTRYPOINT ["/usr/bin/nmap"]
+#  The arguments for the entrypoint
+CMD ["-A", "scanme.nmap.org"]

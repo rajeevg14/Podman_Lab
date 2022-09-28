@@ -1,0 +1,20 @@
+FROM registry.access.redhat.com/ubi8/ubi:latest
+MAINTAINER Rajeev
+# Install necessary commands
+RUN yum update -y
+RUN yum install unzip -y
+RUN yum install httpd -y
+RUN yum install wget -y
+
+
+# Install memcached and libmemcached in RHEL 7
+RUN yum install memcached libmemcached -y
+
+#RUN systemctl enable memcached.service
+#RUN systemctl start memcached.service
+
+RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
+
+CMD ["-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd"]
+EXPOSE 80

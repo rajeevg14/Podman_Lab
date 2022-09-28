@@ -1,0 +1,11 @@
+ARG UBI_MINIMAL_VERSION="latest"
+FROM registry.access.redhat.com/ubi8/ubi:${UBI_MINIMAL_VERSION}
+RUN yum update -y
+RUN yum install httpd -y
+COPY index.html /var/www/html/
+
+RUN echo "ServerName localhost" >> /etc/httpd/conf/httpd.conf
+
+CMD ["-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd"]
+EXPOSE 80
