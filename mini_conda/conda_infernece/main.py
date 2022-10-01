@@ -35,7 +35,7 @@ test_images = test_images.reshape(test_images.shape[0], 28, 28, 1)
 
 
 
-model = keras.models.load_model("src/fashion_mnist_model.h5")
+model = keras.models.load_model("fashion_mnist_model.h5")
 
 
 #run test image from Fashion_MNIST data 
