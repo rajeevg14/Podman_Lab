@@ -1,0 +1,8 @@
+name: opence_env
+channels:
+  - conda-forge
+  - https://ftp.osuosl.org/pub/open-ce/current/
+dependencies:
+  - python
+  - numpy
+  - matplotlib

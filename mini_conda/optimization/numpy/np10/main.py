@@ -14,3 +14,5 @@ np.savez('test.npz', data)
 
 # Loading the data array
 newdata = np.load('test.npz')
+
+print(newdata)

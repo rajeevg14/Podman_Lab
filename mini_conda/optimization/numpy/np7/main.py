@@ -5,7 +5,7 @@
 
 # Opening the text file with the 'r' option,
 # which only allows reading capability
-f = open('somefile.txt', 'r')
+f = open('dataset.txt', 'r')
 
 # Parsing the file and splitting each line,
 # which creates a list where each element of
@@ -17,6 +17,8 @@ f.close()
 
 # Noted changed from example in book
 newdata = alist.append(1)
+
+print(alist)
 
 # After a few operations, we open a new text file
 # to write the data with the 'w' option. If there

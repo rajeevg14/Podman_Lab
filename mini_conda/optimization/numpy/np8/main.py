@@ -1,7 +1,9 @@
 import numpy as np
 
 # Loading and existing file
-arr = np.loadtxt('somefile.txt')
+arr = np.loadtxt('dataset.txt')
+
+print(arr)
 
 # Saving a new file
 np.savetxt('somenewfile.txt', arr)

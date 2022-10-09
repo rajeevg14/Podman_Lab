@@ -8,3 +8,5 @@ function_mean = np.mean(array)
 
 # Calling a method
 method_mean = array.mean()
+
+print(method_mean)

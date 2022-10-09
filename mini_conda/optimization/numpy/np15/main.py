@@ -27,5 +27,5 @@ b = np.array([12, -2, 10])
 
 # Solving for the variables, where we invert A
 x = np.linalg.inv(a).dot(b)
-print x
+print (x)
 # array([ 1.75,  1.75,  0.75])

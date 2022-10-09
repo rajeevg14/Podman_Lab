@@ -26,6 +26,8 @@ temp, rain = temp_and_rain(lat)
 
 result = np.corrcoef(temp, y=rain)
 
+print(result)
+
 # Showing evidence of correlation
 # array([[ 1.        ,  0.99547777],
 #        [ 0.99547777,  1.        ]])
