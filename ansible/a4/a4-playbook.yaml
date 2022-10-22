@@ -1,0 +1,10 @@
+---
+
+- name: Display Ansible Network Information
+  connection: ansible.netcommon.network_cli
+  hosts: all
+  become: yes
+  tasks:
+    - name: Show Configuration
+      debug: 
+          Msg: "The hostname is {{ansible_net_hostname}} and the OS is {{ansible_net_version}}"
