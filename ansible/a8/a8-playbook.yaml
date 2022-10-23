@@ -1,0 +1,10 @@
+---
+
+- name:  Debug
+  connection: local
+  hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Show INfo
+      shell: echo $(whoami) on $(uname -s)
