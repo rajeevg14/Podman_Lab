@@ -1,0 +1,14 @@
+---
+
+- name:  Debug
+  connection: local
+  hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Show INfo
+      debug: var=groups
+    - name: Show INfo
+      debug: var=group_names
+    - name: Show INfo
+      debug: var=hostvars

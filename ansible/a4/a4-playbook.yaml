@@ -5,6 +5,7 @@
   hosts: all
   become: yes
   vars:
+     my_mood: happy
      var_one: awesome
      var_two: ansible is
      var_three: "{{var_two}} {{var_one}}"
@@ -12,3 +13,4 @@
     - name: print variables
       debug: 
           msg: "{{var_three}}"
+      when: my_mood == "happy"

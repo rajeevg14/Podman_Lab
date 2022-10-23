@@ -1,0 +1,10 @@
+---
+
+- name: Validate DNS Configuration
+  connection: local
+  hosts: all
+  become: yes
+  tasks:
+    - name: Check DNS
+      set_fact:
+          dns_configuered_yet: "no"

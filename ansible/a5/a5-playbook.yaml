@@ -1,0 +1,12 @@
+---
+
+- name: Create Usr
+  connection: local
+  hosts: all
+  become: yes
+  tasks:
+    - name: create user
+      user:
+          name: user1
+          state: present
+          group: wheel
