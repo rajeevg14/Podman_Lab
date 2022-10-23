@@ -1,10 +1,14 @@
 ---
 
 - name: Display Ansible Network Information
-  connection: ansible.netcommon.network_cli
+  connection: local
   hosts: all
   become: yes
+  vars:
+     var_one: awesome
+     var_two: ansible is
+     var_three: "{{var_two}} {{var_one}}"
   tasks:
-    - name: Show Configuration
+    - name: print variables
       debug: 
-          Msg: "The hostname is {{ansible_net_hostname}} and the OS is {{ansible_net_version}}"
+          msg: "{{var_three}}"
