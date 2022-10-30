@@ -1,10 +1,12 @@
- FROM python:3.6-alpine
- RUN apk add g++ jpeg-dev zlib-dev libjpeg make
+FROM registry.access.redhat.com/ubi8/python-39
+
+WORKDIR /src
+
+COPY src/requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN pip3 install --no-cache-dir -r src/requirements.txt
-
-ENTRYPOINT [ "python3" ]
+ENTRYPOINT [ "python" ]
 
 CMD [ "src/main.py" ]
