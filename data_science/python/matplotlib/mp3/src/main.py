@@ -19,3 +19,6 @@ def hello():
     # Embed the result in the html output.
     data = base64.b64encode(buf.getbuffer()).decode("ascii")
     return f"<img src='data:image/png;base64,{data}'/>"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=False)
